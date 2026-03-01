@@ -1,0 +1,246 @@
+/* Pulse Weave - Dark theme game styles */
+
+.pw-container {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  background: #0a0a0a;
+  border-radius: 8px;
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.pw-canvas {
+  display: block;
+  cursor: pointer;
+  touch-action: none;
+}
+
+/* HUD */
+.pw-hud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  pointer-events: none;
+}
+
+.pw-hud-left,
+.pw-hud-center,
+.pw-hud-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.pw-hud-left {
+  align-items: flex-start;
+}
+
+.pw-hud-right {
+  align-items: flex-end;
+  pointer-events: auto;
+}
+
+.pw-hud-level {
+  color: #64ffda;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pw-hud-progress {
+  color: #888;
+  font-size: 12px;
+}
+
+.pw-hud-lives {
+  display: flex;
+  gap: 6px;
+}
+
+.pw-life-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.pw-life-active {
+  background: #64ffda;
+  box-shadow: 0 0 6px rgba(100, 255, 218, 0.4);
+}
+
+.pw-life-lost {
+  background: #333;
+  box-shadow: none;
+}
+
+.pw-rules-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid rgba(100, 255, 218, 0.3);
+  background: rgba(10, 10, 10, 0.8);
+  color: #64ffda;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.pw-rules-btn:hover {
+  border-color: #64ffda;
+  background: rgba(100, 255, 218, 0.1);
+}
+
+/* Overlays */
+.pw-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 10, 10, 0.92);
+  z-index: 10;
+}
+
+.pw-overlay-content {
+  text-align: center;
+  padding: 32px;
+  max-width: 400px;
+}
+
+.pw-title {
+  color: #64ffda;
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  letter-spacing: 2px;
+}
+
+.pw-tagline {
+  color: #888;
+  font-size: 14px;
+  font-style: italic;
+  margin: 0 0 24px 0;
+}
+
+.pw-rules-section h2 {
+  color: #e0e0e0;
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pw-goal {
+  color: #e0e0e0;
+  font-size: 14px;
+  margin: 0 0 16px 0;
+}
+
+.pw-rules-list {
+  color: #ccc;
+  font-size: 13px;
+  text-align: left;
+  padding-left: 20px;
+  margin: 0 0 16px 0;
+  line-height: 1.8;
+}
+
+.pw-tip {
+  color: #888;
+  font-size: 12px;
+  margin: 0 0 24px 0;
+  font-style: italic;
+}
+
+.pw-tip strong {
+  color: #64ffda;
+  font-style: normal;
+}
+
+.pw-start-btn {
+  padding: 10px 32px;
+  border: 1px solid #64ffda;
+  background: transparent;
+  color: #64ffda;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pw-start-btn:hover {
+  background: #64ffda;
+  color: #0a0a0a;
+}
+
+/* Level Complete */
+.pw-level-complete-title {
+  color: #64ffda;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 12px 0;
+}
+
+.pw-level-score {
+  color: #e0e0e0;
+  font-size: 16px;
+  margin: 0 0 24px 0;
+}
+
+/* Game Over */
+.pw-game-over-title {
+  color: #ff5050;
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  letter-spacing: 2px;
+}
+
+.pw-score-section {
+  margin: 0 0 24px 0;
+}
+
+.pw-score-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.pw-score-label {
+  color: #888;
+  font-size: 14px;
+}
+
+.pw-score-value {
+  color: #e0e0e0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.pw-high-score .pw-score-label {
+  color: #64ffda;
+}
+
+.pw-high-score .pw-score-value {
+  color: #64ffda;
+}
