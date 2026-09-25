@@ -1,6 +1,6 @@
 {
   "name": "@gagandeep023/pulse-weave",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A rhythm-timing browser game where you thread a dot through gaps in rotating concentric rings",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
